@@ -1,0 +1,467 @@
+@import url("https://api.fontshare.com/css?f[]=general-sans@400,500,600,700&display=swap");
+/* veriables
+ ============================= 
+ */
+//   color
+$primary-100: #f9f8ff;
+$primary-200: #ece8ff;
+$primary-300: #dcd5ff;
+$primary-400: #a673ef;
+$primary-500: #8247e5;
+$primary-600: #6433c4;
+$primary-700: #4a23a4;
+$primary-800: #331684;
+$primary-900: #220d6d;
+$primary: $primary-500;
+
+$success-100: #ebfcd5;
+$success-200: #d4f9ac;
+$success-300: #b1ee80;
+$success-400: #b1ee80;
+$success-500: #5fc92e;
+$success-600: #44ac21;
+$success-700: #2d9017;
+$success-800: #1a740e;
+$success-900: #0d6008;
+$success: $success-500;
+
+$info-100: #d3e5fe;
+$info-200: #a7c9fd;
+$info-300: #7ba8f9;
+$info-400: #598cf4;
+$info-500: #2561ed;
+$info-600: #1b4acb;
+$info-700: #1236aa;
+$info-800: #1236aa;
+$info-900: #071971;
+$info: $info-500;
+
+$warning-100: #fff5ce;
+$warning-200: #ffe89e;
+$warning-300: #ffd76d;
+$warning-400: #ffc749;
+$warning-500: #ffad0d;
+$warning-600: #db8c09;
+$warning-700: #b76f06;
+$warning-800: #935404;
+$warning-900: #7a4102;
+$warning: $warning-500;
+
+$error-100: #ffe3d6;
+$error-200: #ffc0ad;
+$error-300: #ff9783;
+$error-400: #ff6f65;
+$error-500: #ff3236;
+$error-600: #db2438;
+$error-700: #b71938;
+$error-800: #930f35;
+$error-900: #7a0933;
+$error: $error-500;
+
+$dark-grey-100: #747c90;
+$dark-grey-200: #656e85;
+$dark-grey-300: #5c657d;
+$dark-grey-400: #525c76;
+$dark-grey-500: #49536e;
+$dark-grey-600: #3a4662;
+$dark-grey-700: #2c3857;
+$dark-grey-800: #192648;
+$dark-grey-900: #0f1d40;
+$dark-grey: $dark-grey-500;
+
+$light-grey-100: #fafafb;
+$light-grey-200: #f5f6f7;
+$light-grey-300: #eeeff2;
+$light-grey-400: #e2e4e8;
+$light-grey-500: #cacdd5;
+$light-grey-600: #b2b7c2;
+$light-grey-700: #a4a9b6;
+$light-grey-800: #959cab;
+$light-grey-900: #8c93a3;
+$light-grey: $light-grey-500;
+
+$colors: (
+    "primary": $primary,
+    "success": $success,
+    "info": $info,
+    "warning": $warning,
+    "error": $error,
+    "dark-grey": $dark-grey,
+    "light-grey": $light-grey,
+) !default;
+
+$btn-hover: (
+    "primary": $primary-400,
+    "success": $success-400,
+    "info": $info-400,
+    "warning": $warning-400,
+    "error": $error-400,
+    "dark-grey": $dark-grey-400,
+    "light-grey": $light-grey-400,
+) !default;
+$btn-hover-bg: (
+    "primary": $primary-100,
+    "success": $success-100,
+    "info": $info-100,
+    "warning": $warning-100,
+    "error": $error-100,
+    "dark-grey": $dark-grey-100,
+    "light-grey": $light-grey-100,
+) !default;
+
+/*shadows*/
+// ==================
+// black shadows
+$black-shadwos-z-index-1: 0px 1px 1px rgba(0, 0, 0, 0.08);
+$black-shadwos-z-index-2: 0px 2px 3px rgba(0, 0, 0, 0.08);
+$black-shadwos-z-index-3: 0px 4px 5px -1px rgba(0, 0, 0, 0.08);
+$black-shadwos-z-index-4: 0px 6px 7px -2px rgba(0, 0, 0, 0.08);
+$black-shadwos-z-index-5: 0px 8px 11px -3px rgba(0, 0, 0, 0.08);
+$black-shadwos-z-index-6: 0px 12px 19px -5px rgba(0, 0, 0, 0.08);
+$black-shadwos-z-index-7: 0px 16px 25px -7px rgba(0, 0, 0, 0.1);
+$black-shadwos-z-index-8: 0px 24px 33px -9px rgba(0, 0, 0, 0.1);
+$black-shadwos-z-index-9: 0px 40px 55px -11px rgba(0, 0, 0, 0.12);
+// Purple Shadows
+$purple-shadwos-z-index-1: 0px 1px 1px rgba(112, 58, 202, 0.08);
+$purple-shadwos-z-index-2: 0px 2px 3px rgba(112, 58, 202, 0.08);
+$purple-shadwos-z-index-3: 0px 4px 5px -1px rgba(112, 58, 202, 0.08);
+$purple-shadwos-z-index-4: 0px 6px 7px -2px rgba(112, 58, 202, 0.08);
+$purple-shadwos-z-index-5: 0px 8px 11px -3px rgba(112, 58, 202, 0.08);
+$purple-shadwos-z-index-6: 0px 12px 19px -5px rgba(112, 58, 202, 0.08);
+$purple-shadwos-z-index-7: 0px 16px 25px -7px rgba(112, 58, 202, 0.1);
+$purple-shadwos-z-index-8: 0px 24px 33px -9px rgba(112, 58, 202, 0.1);
+$purple-shadwos-z-index-9: 0px 40px 55px -11px rgba(112, 58, 202, 0.12);
+
+// font
+$font-size-base: 1rem;
+$font-size-small: $font-size-base * 0.875;
+$font-size-large: $font-size-base * 1.25;
+
+$font-size-1: 10px;
+$font-size-2: 12px;
+$font-size-3: 14px;
+$font-size-4: 16px;
+$font-size-5: 18px;
+$font-size-6: 20px;
+$font-size-7: 28px;
+$font-size-8: 32px;
+$font-size-9: 42px;
+$font-size-10: 56px;
+
+$font-size: (
+    "1": $font-size-1,
+    "2": $font-size-2,
+    "3": $font-size-3,
+    "4": $font-size-4,
+    "5": $font-size-5,
+    "6": $font-size-6,
+    "7": $font-size-7,
+    "8": $font-size-8,
+    "9": $font-size-9,
+    "10": $font-size-10,
+);
+
+/*
+veriables end
+=================
+background-color and test - color class
+*/
+// Loop background color class
+@each $colore, $value in $colors {
+    .#{$colore} {
+        background-color: $value;
+    }
+}
+// Loop color class
+@each $colore, $value in $colors {
+    .text-#{$colore} {
+        color: $value;
+    }
+}
+// fondt size regular
+@each $font, $value in $font-size {
+    .font-regular-#{$font} {
+        font-size: $value;
+        font-style: normal;
+        font-weight: 400;
+    }
+}
+// Font Weights: Medium
+@each $font, $value in $font-size {
+    .font-medium-#{$font} {
+        font-size: $value;
+        font-style: normal;
+        font-weight: 500;
+    }
+}
+// Font Weights: Semibold
+@each $font, $value in $font-size {
+    .font-semibold-#{$font} {
+        font-size: $value;
+        font-style: normal;
+        font-weight: 600;
+    }
+}
+@each $font, $value in $font-size {
+    .font-bold-#{$font} {
+        font-size: $value;
+        font-style: normal;
+        font-weight: 700;
+    }
+}
+/* 
+Body  and tags
+===================
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    font-family: "General Sans", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+hr {
+    margin: 1rem 0;
+    color: inherit;
+    background-color: currentColor;
+    border: 0;
+    opacity: 0.25;
+}
+
+hr:not([size]) {
+    height: 1px;
+}
+h6,
+.h6,
+h5,
+.h5,
+h4,
+.h4,
+h3,
+.h3,
+h2,
+.h2,
+h1,
+.h1 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+ol,
+ul {
+    padding-left: 2rem;
+}
+
+ol,
+ul,
+dl {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+    margin-bottom: 0;
+}
+
+a {
+    color: #0d6efd;
+    text-decoration: underline;
+    &:hover {
+        color: #0a58ca;
+    }
+}
+a:not([href]):not([class]) {
+    &,
+    &:hover {
+        color: inherit;
+        text-decoration: none;
+    }
+}
+button:focus:not(:focus-visible) {
+    outline: 0;
+}
+
+/* 
+Layout 
+===================
+*/
+// veriable display width
+$grid-mobile-320: 320px;
+$grid-mobile-360: 360px;
+$grid-mobile-375: 375px;
+$grid-mobile-414: 414px;
+
+$grid-tablet-600: 600px;
+$grid-tablet-720: 720px;
+$grid-tablet-768: 768px;
+$grid-tablet-1024: 1024px;
+
+$grid-desktop-1280: 1280px;
+$grid-desktop-1366: 1366px;
+$grid-desktop-1440: 1440px;
+$grid-desktop-1920: 1920px;
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@for $i from 1 through 12 {
+    .col-#{$i} {
+        flex: 0 0 100% / 12 * $i;
+    }
+}
+
+// grid layout
+$grid-columns:      12;
+$grid-gutter-width: 30px;
+
+// $grid-breakpoints: (
+//   // Extra small screen / phone
+//   "xs": 0,
+//   // Small screen / phone
+//   -sm": 600px,
+//   // Medium screen / tablet
+//   -md: 768px,
+//   // Large screen / desktop
+//   -lg: 992px,
+//   // Extra large screen / wide desktop
+//   -xl: 1200px
+// );
+
+
+
+$container-max-widths: (
+  "sm": 540px,
+  "md": 720px,
+  "lg": 960px,
+  "xl": 1140px
+);
+
+
+.grid {
+    display: block;
+
+    @media (max-width: $grid-tablet-600) {
+        display: grid;
+        grid-gap: 16px;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    @media (min-width: $grid-tablet-600) {
+        display: grid;
+        grid-gap: 16px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @media (min-width: $grid-tablet-720) {
+        display: grid;
+        grid-gap: 16px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    @media (min-width: $grid-tablet-1024) {
+        display: grid;
+        grid-gap: 16px;
+        grid-template-columns: repeat(4, 1fr);
+    }
+    @media (min-width: $grid-desktop-1280) {
+        display: grid;
+        grid-gap: 16px;
+        grid-template-columns: repeat(5, 1fr);
+    }
+    @media (min-width: $grid-desktop-1920) {
+        display: grid;
+        grid-gap: 16px;
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+/* 
+Button 
+===================
+*/
+.btn {
+    display: inline-block;
+    text-align: center;
+    font-weight: 600;
+    padding: 10px 20px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.08);
+    border: 0;
+    outline: none;
+
+}
+@mixin button-variant($background) {
+    @if $background == $light-grey {
+        color: black;
+    } @else {
+        color: white;
+    }
+    background-color: $background;
+
+}
+@mixin button-outline-variant($color) {
+    color: $color;
+    border: 1px solid $color;
+}
+
+@each $color, $value in $colors {
+    .btn_#{$color} {
+        @include button-variant($value);
+    }
+}
+@each $color, $value in $btn-hover {
+    .btn_#{$color}:hover {
+        background-color: $value;
+    }
+}
+@each $color, $value in $colors {
+    .btn_outline_#{$color} {
+        @include button-outline-variant($value);
+    }
+}
+@each $color, $value in $btn-hover {
+    .btn_outline_#{$color}:hover {
+        border-color: $value;
+        color: $value;
+        background-color: #{map-get($btn-hover-bg,$color )};
+    }
+}
+.radius_6 {
+    border-radius: 6px;
+}
+.radius_12 {
+    border-radius: 12px;
+}
+.rounded {
+    border-radius: 24px;
+}
+.radius_left_cap {
+    border-radius: 0px 24px 24px 0px;
+}
+.radius_right_cap {
+    border-radius: 24px 0px 0px 24px;
+}
