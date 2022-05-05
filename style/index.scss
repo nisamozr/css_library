@@ -1,5 +1,4 @@
 @import url("https://api.fontshare.com/css?f[]=general-sans@400,500,600,700&display=swap");
-@use "sass:math";
 /* veriables
  ============================= 
  */
@@ -68,7 +67,7 @@ $dark-grey-600: #3a4662;
 $dark-grey-700: #2c3857;
 $dark-grey-800: #192648;
 $dark-grey-900: #0f1d40;
-$dark-grey: $dark-grey-500;
+$dark_grey: $dark-grey-500;
 
 $light-grey-100: #fafafb;
 $light-grey-200: #f5f6f7;
@@ -79,7 +78,7 @@ $light-grey-600: #b2b7c2;
 $light-grey-700: #a4a9b6;
 $light-grey-800: #959cab;
 $light-grey-900: #8c93a3;
-$light-grey: $light-grey-500;
+$light_grey: $light-grey-500;
 
 $colors: (
     "primary": $primary,
@@ -87,8 +86,8 @@ $colors: (
     "info": $info,
     "warning": $warning,
     "error": $error,
-    "dark-grey": $dark-grey,
-    "light-grey": $light-grey,
+    "dark_grey": $dark_grey,
+    "light_grey": $light_grey,
 ) !default;
 
 $btn-hover: (
@@ -97,8 +96,8 @@ $btn-hover: (
     "info": $info-400,
     "warning": $warning-400,
     "error": $error-400,
-    "dark-grey": $dark-grey-400,
-    "light-grey": $light-grey-400,
+    "dark_grey": $dark-grey-400,
+    "light_grey": $light-grey-400,
 ) !default;
 $btn-hover-bg: (
     "primary": $primary-100,
@@ -106,8 +105,8 @@ $btn-hover-bg: (
     "info": $info-100,
     "warning": $warning-100,
     "error": $error-100,
-    "dark-grey": $dark-grey-100,
-    "light-grey": $light-grey-100,
+    "dark_grey": $dark-grey-100,
+    "light_grey": $light-grey-100,
 ) !default;
 
 /*shadows*/
@@ -175,13 +174,13 @@ background-color and test - color class
 }
 // Loop color class
 @each $colore, $value in $colors {
-    .text-#{$colore} {
+    .text_#{$colore} {
         color: $value;
     }
 }
 // fondt size regular
 @each $font, $value in $font-size {
-    .font-regular-#{$font} {
+    .font_regular_#{$font} {
         font-size: $value;
         font-style: normal;
         font-weight: 400;
@@ -189,7 +188,7 @@ background-color and test - color class
 }
 // Font Weights: Medium
 @each $font, $value in $font-size {
-    .font-medium-#{$font} {
+    .font_medium_#{$font} {
         font-size: $value;
         font-style: normal;
         font-weight: 500;
@@ -197,14 +196,14 @@ background-color and test - color class
 }
 // Font Weights: Semibold
 @each $font, $value in $font-size {
-    .font-semibold-#{$font} {
+    .font_semibold_#{$font} {
         font-size: $value;
         font-style: normal;
         font-weight: 600;
     }
 }
 @each $font, $value in $font-size {
-    .font-bold-#{$font} {
+    .font_bold_#{$font} {
         font-size: $value;
         font-style: normal;
         font-weight: 700;
@@ -303,6 +302,79 @@ button:focus:not(:focus-visible) {
     outline: 0;
 }
 
+// utility
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+);
+
+$border-widths: (
+  "0": 0,
+  "1": 1px,
+  "2": 2px,
+  "3": 3px,
+  "4": 4px,
+  "5": 5px
+);
+// margin
+@each $key, $value in $spacers {
+    .m_#{$key}{
+        margin:  $value
+    }
+    .mt_#{$key}{
+        margin-top: $value;
+    }
+    .mb_#{$key}{
+        margin-bottom: $value;
+    }
+    .mr_#{$key}{
+        margin-right: $value;
+    }
+    .ml_#{$key}{
+        margin-left: $value;
+    }
+    
+}
+// padding
+@each $key, $value in $spacers {
+    .p_#{$key}{
+        padding: $value;
+    }
+    .pt_#{$key}{
+        padding-top: $value;
+    }
+    .pb_#{$key}{
+        padding-bottom: $value;
+    }
+    .pr_#{$key}{
+        padding-right: $value;
+    }
+    .pl_#{$key}{
+        padding-left: $value;
+    }
+    
+}
+// border
+
+@each $key, $value in  $border-widths{
+    .border_#{$key}{
+        border: $value solid;
+    }
+    
+}
+// width
+@for $val from 1 to 100 {
+    .width_#{$val}{
+        width: #{$val}#{"%"} ;
+    }
+    
+}
+
 /* 
 Layout 
 ===================
@@ -324,8 +396,9 @@ $breakpoints: (
   "lg": 1024px,
   "xl": 1280px
 );
-
+$display : block, inline, flex, inline-block, grid, none;
 $layout-value : flex-start, flex-end, center, space-between, space-around;
+$layout-value-align-item : flex-start, flex-end, center;
 
 
 .container {
@@ -337,12 +410,36 @@ $layout-value : flex-start, flex-end, center, space-between, space-around;
 .row {
     display: flex;
     flex-flow: row wrap;
+    margin: 1rem 0;
 }
-
+// display
+@each $var in $display {
+    .display_#{$var}{
+        display: #{$var};
+    
+    }
+}
 // justify contend class
 @each $var in $layout-value {
-    .justify-#{$var}{
+    .justify_#{$var}{
         justify-content: #{$var};
+  
+    }
+}
+// alighitem
+
+@each $var in $layout-value-align-item {
+    .align_#{$var}{
+        align-items: #{$var};
+    
+  
+    }
+}
+@each $var in $layout-value-align-item {
+    .text_align_#{$var}{
+        text-align: #{$var};
+    
+  
     }
 }
 
@@ -375,48 +472,46 @@ $layout-value : flex-start, flex-end, center, space-between, space-around;
 
 @include xs{
     @for $i from 1 through $grid-columns {
-        .col-#{$i}-xs{
+        .col_#{$i}_xs{
             flex: 0 0 100% / 12 * $i;
-            // flex-grow: 0;
-            // width: math.div($i * 100% , $grid-columns);
         }
     }
 }
 @include sm{
     @for $i from 1 through $grid-columns {
-        .col-#{$i}-sm{
+        .col_#{$i}_sm{
             flex: 0 0 100% /  $grid-columns * $i;
         }
     }
 }
 @include md{
     @for $i from 1 through $grid-columns {
-        .col-#{$i}-md{
+        .col_#{$i}_md{
             flex: 0 0 100% /  $grid-columns * $i;
         }
     }
 }
 @include lg{
     @for $i from 1 through $grid-columns {
-        .col-#{$i}-lg{
+        .col_#{$i}_lg{
             flex: 0 0 100% /  $grid-columns * $i;
         }
     }
 }
 @include xl{
     @for $i from 1 through $grid-columns {
-        .col-#{$i}-xl{
+        .col_#{$i}_xl{
             flex: 0 0 100% /  $grid-columns * $i;
         }
     }
 }
 
 @each $key, $value in $grid-gap {
-    .gap-#{$key} > * {
+    .gap_#{$key} > * {
         padding: $value;
 
     }
-    .gap-#{$key} {
+    .gap_#{$key} {
         margin-left: -$value;
         margin-right: -$value;
     }
