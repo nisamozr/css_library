@@ -263,22 +263,37 @@ background-color and test - color class
     .primary_#{$key}{
         background-color: $value;
     }
+    .text_primary_#{$key}{
+        color: $value;
+    }
 }@each $key, $value in $success-colors{
     .success_#{$key}{
         background-color: $value;
+    }
+    .text_success_#{$key}{
+        color: $value;
     }
 }
 @each $key, $value in $info-colors{
     .info_#{$key}{
         background-color: $value;
     }
+    .text_info_#{$key}{
+        color: $value;
+    }
 }
 @each $key, $value in $warning-colors{
     .warning_#{$key}{
         background-color: $value;
     }
+    .text_warning_#{$key}{
+        color: $value;
+    }
 }
 @each $key, $value in $error-colors{
+    .text_error_#{$key}{
+        color: $value;
+    }
     .error_#{$key}{
         background-color: $value;
     }
@@ -287,10 +302,16 @@ background-color and test - color class
     .dark_grey_#{$key}{
         background-color: $value;
     }
+    .text_dark_grey_#{$key}{
+        color: $value;
+     }
 }
 @each $key, $value in $light-grey-colors{
     .light_grey_#{$key}{
         background-color: $value;
+    }
+    .text_light_grey_#{$key}{
+        color: $value;
     }
 }
 
@@ -417,6 +438,14 @@ $border-widths: (
   "4": 4px,
   "5": 5px
 );
+$border : (
+    "border" : border,
+    "border_top" : border-top,
+    "border_bottom" : border-bottom,
+    "border_left" : border-left,
+    "border_right": border-right
+
+);
 // margin
 @each $key, $value in $spacers {
     .m_#{$key}{
@@ -461,6 +490,18 @@ $border-widths: (
     .border_#{$key}{
         border: $value solid;
        border-color: #999;
+    }
+    
+}
+@each $key, $value in $border {
+    .#{$key}{
+        #{$value} : 1px solid #999;
+    }
+    
+}
+@each $key, $value in $colors {
+    .border_#{$key}{
+        border-color : $value;
     }
     
 }
@@ -707,6 +748,7 @@ Button
     display: inline-block;
     text-align: center;
     font-weight: 600;
+    font-size: 16px;
     padding: 10px 20px;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.08);
     border: 0;
