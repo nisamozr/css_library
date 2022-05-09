@@ -67,7 +67,7 @@ $dark-grey-600: #3a4662;
 $dark-grey-700: #2c3857;
 $dark-grey-800: #192648;
 $dark-grey-900: #0f1d40;
-$dark_grey: $dark-grey-500;
+$dark-grey: $dark-grey-500;
 
 $light-grey-100: #fafafb;
 $light-grey-200: #f5f6f7;
@@ -78,7 +78,7 @@ $light-grey-600: #b2b7c2;
 $light-grey-700: #a4a9b6;
 $light-grey-800: #959cab;
 $light-grey-900: #8c93a3;
-$light_grey: $light-grey-500;
+$light-grey: $light-grey-500;
 
 $colors: (
     "primary": $primary,
@@ -86,8 +86,8 @@ $colors: (
     "info": $info,
     "warning": $warning,
     "error": $error,
-    "dark_grey": $dark_grey,
-    "light_grey": $light_grey,
+    "dark-grey": $dark-grey,
+    "light-grey": $light-grey,
 ) !default;
 $primary-colors: (
     "100": $primary-100,
@@ -183,8 +183,8 @@ $btn-hover: (
     "info": $info-400,
     "warning": $warning-400,
     "error": $error-400,
-    "dark_grey": $dark-grey-400,
-    "light_grey": $light-grey-400,
+    "dark-grey": $dark-grey-400,
+    "light-grey": $light-grey-400,
 ) !default;
 $btn-hover-bg: (
     "primary": $primary-100,
@@ -192,8 +192,8 @@ $btn-hover-bg: (
     "info": $info-100,
     "warning": $warning-100,
     "error": $error-100,
-    "dark_grey": $dark-grey-100,
-    "light_grey": $light-grey-100,
+    "dark-grey": $dark-grey-100,
+    "light-grey": $light-grey-100,
 ) !default;
 $link-hover-bg: (
     "primary": $primary-300,
@@ -201,8 +201,8 @@ $link-hover-bg: (
     "info": $info-300,
     "warning": $warning-300,
     "error": $error-300,
-    "dark_grey": $dark-grey-300,
-    "light_grey": $light-grey-300,
+    "dark-grey": $dark-grey-300,
+    "light-grey": $light-grey-300,
 ) !default;
 
 /*shadows*/
@@ -286,10 +286,10 @@ $border-widths: (
 );
 $border: (
     "border": border,
-    "border_top": border-top,
-    "border_bottom": border-bottom,
-    "border_left": border-left,
-    "border_right": border-right,
+    "border-top": border-top,
+    "border-bottom": border-bottom,
+    "border-left": border-left,
+    "border-right": border-right,
 );
 // veriable display width
 
@@ -310,7 +310,6 @@ $breakpoints: (
     "xxl": 1440px,
     "xxxl": 1920px,
 );
-
 
 /*
 veriables end
@@ -357,71 +356,71 @@ background-color and test -color class
     }
 }
 @each $key, $value in $primary-colors {
-    .primary_#{$key} {
+    .primary-#{$key} {
         background-color: $value;
     }
-    .text_primary_#{$key} {
+    .text-primary-#{$key} {
         color: $value;
     }
 }
 @each $key, $value in $success-colors {
-    .success_#{$key} {
+    .success-#{$key} {
         background-color: $value;
     }
-    .text_success_#{$key} {
+    .text-success-#{$key} {
         color: $value;
     }
 }
 @each $key, $value in $info-colors {
-    .info_#{$key} {
+    .info-#{$key} {
         background-color: $value;
     }
-    .text_info_#{$key} {
+    .text-info-#{$key} {
         color: $value;
     }
 }
 @each $key, $value in $warning-colors {
-    .warning_#{$key} {
+    .warning-#{$key} {
         background-color: $value;
     }
-    .text_warning_#{$key} {
+    .text-warning-#{$key} {
         color: $value;
     }
 }
 @each $key, $value in $error-colors {
-    .text_error_#{$key} {
+    .text-error-#{$key} {
         color: $value;
     }
-    .error_#{$key} {
+    .error-#{$key} {
         background-color: $value;
     }
 }
 @each $key, $value in $dark-grey-colors {
-    .dark_grey_#{$key} {
+    .dark-grey-#{$key} {
         background-color: $value;
     }
-    .text_dark_grey_#{$key} {
+    .text-dark-grey-#{$key} {
         color: $value;
     }
 }
 @each $key, $value in $light-grey-colors {
-    .light_grey_#{$key} {
+    .light-grey-#{$key} {
         background-color: $value;
     }
-    .text_light_grey_#{$key} {
+    .text-light-grey-#{$key} {
         color: $value;
     }
 }
 
 // Loopcolor class
 @each $cellore, $value in $colors {
-    .text_#{$cellore} {
+    .text-#{$cellore} {
         color: $value;
     }
 }
 // fondt size regular
 @each $font, $value in $font-size {
-    .font_regular_#{$font} {
+    .font-regular-#{$font} {
         font-size: $value;
         font-style: normal;
         font-weight: 400;
@@ -430,7 +429,7 @@ background-color and test -color class
 }
 // Font Weights: Medium
 @each $font, $value in $font-size {
-    .font_medium_#{$font} {
+    .font-medium-#{$font} {
         font-size: $value;
         font-style: normal;
         font-weight: 500;
@@ -439,7 +438,7 @@ background-color and test -color class
 }
 // Font Weights: Semibold
 @each $font, $value in $font-size {
-    .font_semibold_#{$font} {
+    .font-semibold-#{$font} {
         font-size: $value;
         font-style: normal;
         font-weight: 600;
@@ -447,7 +446,7 @@ background-color and test -color class
     }
 }
 @each $font, $value in $font-size {
-    .font_bold_#{$font} {
+    .font-bold-#{$font} {
         font-size: $value;
         font-style: normal;
         font-weight: 700;
@@ -462,6 +461,7 @@ Body  and tags
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "General Sans", sans-serif;
 }
 body {
     margin: 0;
@@ -470,7 +470,6 @@ body {
     font-size: 1rem;
     font-weight: 400;
     // line-height: 1.5;
-
 }
 hr {
     margin: 1rem 0;
@@ -510,60 +509,60 @@ h1,
 
 // margin
 @each $key, $value in $spacers {
-    .m_#{$key} {
+    .m-#{$key} {
         margin: $value;
     }
-    .mx_#{$key} {
+    .mx-#{$key} {
         margin-left: $value;
         margin-right: $value;
     }
-    .my_#{$key} {
+    .my-#{$key} {
         margin-top: $value;
         margin-bottom: $value;
     }
-    .mt_#{$key} {
+    .mt-#{$key} {
         margin-top: $value;
     }
-    .mb_#{$key} {
+    .mb-#{$key} {
         margin-bottom: $value;
     }
-    .mr_#{$key} {
+    .mr-#{$key} {
         margin-right: $value;
     }
-    .ml_#{$key} {
+    .ml-#{$key} {
         margin-left: $value;
     }
 }
 // padding
 @each $key, $value in $spacers {
-    .p_#{$key} {
+    .p-#{$key} {
         padding: $value;
     }
-    .px_#{$key} {
+    .px-#{$key} {
         padding-left: $value;
         padding-right: $value;
     }
-    .py_#{$key} {
+    .py-#{$key} {
         padding-top: $value;
         padding-bottom: $value;
     }
-    .pt_#{$key} {
+    .pt-#{$key} {
         padding-top: $value;
     }
-    .pb_#{$key} {
+    .pb-#{$key} {
         padding-bottom: $value;
     }
-    .pr_#{$key} {
+    .pr-#{$key} {
         padding-right: $value;
     }
-    .pl_#{$key} {
+    .pl-#{$key} {
         padding-left: $value;
     }
 }
 // border
 
 @each $key, $value in $border-widths {
-    .border_#{$key} {
+    .border-#{$key} {
         border: $value solid;
         border-color: #999;
     }
@@ -574,34 +573,34 @@ h1,
     }
 }
 @each $key, $value in $colors {
-    .border_#{$key} {
+    .border-#{$key} {
         border-color: $value;
     }
 }
 
-.radius_6 {
+.radius-6 {
     border-radius: 0.375rem;
 }
-.radius_12 {
+.radius-12 {
     border-radius: 0.75rem;
 }
 .rounded {
     border-radius: 1.5rem;
 }
-.radius_left_cap {
+.radius-left-cap {
     border-radius: 0px 1.5rem 1.5rem 0px;
 }
-.radius_right_cap {
+.radius-right-cap {
     border-radius: 1.5rem 0px 0px 1.5rem;
 }
 // width
 @for $val from 1 to 100 {
-    .width_#{$val} {
+    .width-#{$val} {
         width: #{$val}#{"%"};
     }
 }
 //
-.height_20 {
+.height-20 {
     height: 50px;
 }
 
@@ -611,29 +610,29 @@ Layout
 */
 $display: block, inline, flex, inline-block, grid, none;
 $float: (
-    "float_left": "left",
-    "float_right": "right",
-    "float_none": "none",
+    "float-left": "left",
+    "float-right": "right",
+    "float-none": "none",
 );
 $flex: (
-    "flex_1": "1 1 0%",
-    "flex_auto": "1 1 auto",
-    "flex_initial": "0 1 auto",
-    "flex_none": "none",
+    "flex-1": "1 1 0%",
+    "flex-auto": "1 1 auto",
+    "flex-initial": "0 1 auto",
+    "flex-none": "none",
 );
 $layout-value-align-item: flex-start, flex-end, center;
 $flex-direction: (
     "row": row,
-    "row_reverse": row-reverse,
-    "cellumn_reverse": cellumn-reverse,
-    "cellumn": cellumn,
+    "row-reverse": row-reverse,
+    "column-reverse": column-reverse,
+    "column": column,
 );
 $layout-value-justify-contend: (
-    "flex_start": flex-start,
-    "flex_end": flex-end,
+    "flex-start": flex-start,
+    "flex-end": flex-end,
     "center": center,
-    "space_between": space-between,
-    "space_around": space-around,
+    "space-between": space-between,
+    "space-around": space-around,
 );
 // cell class
 @mixin xs {
@@ -686,11 +685,11 @@ $layout-value-justify-contend: (
 // display
 @each $var in $display {
     @if $var == inline-block {
-        .display_inline_block {
+        .display-inline-block {
             display: #{$var};
         }
     } @else {
-        .display_#{$var} {
+        .display-#{$var} {
             display: #{$var};
         }
     }
@@ -708,127 +707,92 @@ $layout-value-justify-contend: (
     }
 }
 
-
 @each $key, $vale in $flex-direction {
-    .flex_dir_#{$key} {
+    .flex-dir-#{$key} {
         flex-direction: $vale;
     }
 }
 
 // justify contend class
 @each $key, $var in $layout-value-justify-contend {
-    .justify_#{$key} {
+    .justify-#{$key} {
         justify-content: #{$var};
     }
 }
 // alighitem
 
 @each $var in $layout-value-align-item {
-    .align_#{$var} {
+    .align-#{$var} {
         align-items: #{$var};
     }
 }
 @each $var in $layout-value-align-item {
-    .text_align_#{$var} {
+    .text-align-#{$var} {
         text-align: #{$var};
     }
 }
 
 @include xs {
     @for $i from 1 through $grid-colums {
-        .cell_#{$i}_xs {
+        .cell-#{$i}-xs {
             flex: 0 0 100% / 12 * $i;
         }
     }
 }
 @include sm {
     @for $i from 1 through $grid-colums {
-        .cell_#{$i}_sm {
+        .cell-#{$i}-sm {
             flex: 0 0 100% / $grid-colums * $i;
         }
     }
 }
 @include md {
     @for $i from 1 through $grid-colums {
-        .cell_#{$i}_md {
+        .cell-#{$i}-md {
             flex: 0 0 100% / $grid-colums * $i;
         }
     }
 }
 @include lg {
     @for $i from 1 through $grid-colums {
-        .cell_#{$i}_lg {
+        .cell-#{$i}-lg {
             flex: 0 0 100% / $grid-colums * $i;
         }
     }
 }
 @include xl {
     @for $i from 1 through $grid-colums {
-        .cell_#{$i}_xl {
+        .cell-#{$i}-xl {
             flex: 0 0 100% / $grid-colums * $i;
         }
     }
 }
 @include xxl {
     @for $i from 1 through $grid-colums {
-        .cell_#{$i}_xxl {
+        .cell-#{$i}-xxl {
             flex: 0 0 100% / $grid-colums * $i;
         }
     }
 }
 @include xxxl {
     @for $i from 1 through $grid-colums {
-        .cell_#{$i}_xxxl {
+        .cell-#{$i}-xxxl {
             flex: 0 0 100% / $grid-colums * $i;
         }
     }
 }
 
 @each $key, $value in $grid-gap {
-    .gap_#{$key} > * {
+    .gap-#{$key} > * {
         padding: $value;
     }
-    .gap_#{$key} {
+    .gap-#{$key} {
         margin-left: -$value;
         margin-right: -$value;
     }
 }
 
-// .grid {
-//     display: block;
-
-//     @media (max-width: $grid-tablet-600) {
-//         display: grid;
-//         grid-gap: 16px;
-//         grid-template-colums: repeat(1, 1fr);
-//     }
-//     @media (min-width: $grid-tablet-600) {
-//         display: grid;
-//         grid-gap: 16px;
-//         grid-template-colums: repeat(2, 1fr);
-//     }
-//     @media (min-width: $grid-tablet-720) {
-//         display: grid;
-//         grid-gap: 16px;
-//         grid-template-colums: repeat(3, 1fr);
-//     }
-//     @media (min-width: $grid-tablet-1024) {
-//         display: grid;
-//         grid-gap: 16px;
-//         grid-template-colums: repeat(4, 1fr);
-//     }
-//     @media (min-width: $grid-desktop-1280) {
-//         display: grid;
-//         grid-gap: 16px;
-//         grid-template-colums: repeat(5, 1fr);
-//     }
-//     @media (min-width: $grid-desktop-1920) {
-//         display: grid;
-//         grid-gap: 16px;
-//         grid-template-colums: repeat(6, 1fr);
-//     }
-// }
-/* 
+/*
 Link
 ===================
 */
@@ -839,7 +803,7 @@ Link
         color: $info-300;
     }
 }
-.link_underline {
+.link-underline {
     text-decoration: underline;
     color: $info;
     &:hover {
@@ -847,7 +811,7 @@ Link
     }
 }
 @each $key, $value in $colors {
-    .link_#{$key} {
+    .link-#{$key} {
         color: $value;
         text-decoration: none;
         &:hover {
@@ -863,129 +827,229 @@ Button
 $btn-lg-font: 16px;
 $btn-md-font: 14px;
 $btn-sm-font: 12px;
-// @mixin btn_size {
-//     @media (min-width: map-get($breakpoints, "md")) {
-//         @content;
-//     }
-// }
+
+.btn-cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    color: $primary;
+    border: 0;
+    background-color: transparent;
+
+    font-style: normal;
+    font-family: "General Sans", sans-serif;
+    line-height: 160%;
+
+    cursor: pointer;
+    svg {
+        fill: $primary;
+    }
+}
+
+.btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 16px;
+    background-color: $primary;
+    color: #ffff;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.08);
+    border: none;
+    gap: 8px;
+    svg {
+        fill: #fff;
+    }
+
+    &:hover {
+        background-color: $primary-400;
+    }
+    &:focus {
+        background: #8247e5;
+
+        box-shadow: 0px 2px 2px -1px rgba(0, 0, 0, 0.12), 0px 0px 0px 3px #dcd4ff;
+    }
+    &:disabled {
+        background-color: $light-grey-400;
+        color: $light-grey-600;
+        pointer-events: none;
+
+        svg {
+            fill: $light-grey-600;
+        }
+    }
+}
+.btn-outline {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 16px;
+    font-weight: 600;
+    color: $primary;
+    background-color: #ffff;
+    border: 1px solid $primary;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.08);
+    gap: 8px;
+
+    svg {
+        fill: $primary;
+    }
+
+    &:hover {
+        background: #f9f8ff;
+    }
+    &:focus {
+        border: 1px solid #a673ef;
+
+        box-shadow: 0px 2px 2px -1px rgba(0, 0, 0, 0.12), 0px 0px 0px 3px #dcd4ff;
+    }
+    &:disabled {
+        background-color: $light-grey-400;
+        color: $light-grey-600;
+        pointer-events: none;
+        border: 1px solid #e2e4e8;
+
+        svg {
+            fill: $light-grey-600;
+        }
+    }
+}
+.btn-classic {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 16px;
+    background-color: #ffff;
+    color: $dark-grey-400;
+    border: 1px solid #e2e4e8;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    font-weight: 600;
+    gap: 8px;
+    svg {
+        fill: $dark-grey-400;
+    }
+    &:hover {
+        background: #fafafb;
+    }
+    &:focus {
+        border: 1px solid #e2e4e8;
+        box-shadow: 0px 2px 2px -1px rgba(0, 0, 0, 0.12), 0px 0px 0px 3px #eeeff2;
+    }
+    &:disabled {
+        background-color: $light-grey-400;
+        color: $light-grey-600;
+        pointer-events: none;
+        border: 1px solid #e2e4e8;
+
+        svg {
+            fill: $light-grey-600;
+        }
+    }
+}
+.btn-fix {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 
 @include xs {
-    .btn {
-        font-size: $btn-sm-font;
+    .btn-cell {
+        font-size: 12px;
+        gap: 4px;
+        svg {
+            width: 9.33px;
+            height: 9.33px;
+        }
+    }
+
+    .btn-outline,
+    .btn,
+    .btn-classic {
+        svg {
+            width: 9.33px;
+            height: 9.33px;
+        }
+    }
+    .btn-fix {
+        padding: 6px 12px;
+        font-size: 12px;
+        width: 256px;
+        height: 31px;
+        svg {
+            width: 9.33px;
+            height: 9.33px;
+        }
     }
 }
 @include md {
-    .btn {
-        font-size: $btn-md-font;
+    .btn-cell {
+        font-size: 14px;
+        gap: 8px;
+        svg {
+            width: 10.5px;
+            height: 10.5px;
+        }
+    }
+
+    .btn-outline,
+    .btn,
+    .btn-classic {
+        svg {
+            width: 10.5px;
+            height: 10.5px;
+        }
+    }
+    .btn-fix {
+        padding: 8px 16px;
+        font-size: 14px;
+        width: 256px;
+        height: 38px;
+        svg {
+            width: 10.5px;
+            height: 10.5px;
+        }
     }
 }
-@include lg {
-    .btn {
-        font-size: $btn-lg-font;
+@include xl {
+    .btn-cell {
+        font-size: 16px;
+        gap: 8px;
+        svg {
+            width: 14px;
+            height: 14px;
+        }
+    }
+
+    .btn-outline,
+    .btn,
+    .btn-classic {
+        svg {
+            width: 14px;
+            height: 14px;
+        }
+    }
+    .btn-fix {
+        padding: 10px 16px;
+        font-size: 16px;
+        width: 344px;
+        height: 46px;
+        svg {
+            width: 14px;
+            height: 14px;
+        }
     }
 }
 
-button {
-    &:disabled,
-    [disabled] {
-        background-color: rgb(229, 229, 229);
-        cursor: not-allowed;
-        pointer-events: none;
-    }
-}
-.btn {
-    display: inline-block;
-    cursor: pointer;
-    align-items: center;
-    // width: 23.438rem;
-    // height: 3rem;
-    text-align: center;
-    text-decoration: none;
-    vertical-align: middle;
-    font-weight: 600;
-    padding: 0.625rem 1rem;
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.08);
-    border: 0;
-    border: none;
-    &:disabled,
-    [disabled],
-    &.disabled,
-    fieldset:disabled & {
-        background-color: $light-grey-400;
-        color: $light-grey-600;
-        border: 0;
-        pointer-events: none;
-        // opacity: ;
-    }
-
-    &:focus {
-    }
-}
-
-@mixin button-variant($background) {
-    @if $background == $light-grey {
-        color: black;
-    } @else {
-        color: white;
-    }
-    background-color: $background;
-}
-@mixin button-border-variant($cellor) {
-    color: $cellor;
-    border: 1px solid $cellor;
-}
-@mixin button-outline-variant($color) {
-    color: $color;
-    border: 1px solid $color;
-}
-
-@each $cellor, $value in $colors {
-    .btn_#{$cellor} {
-        @include button-variant($value);
-    }
-}
-@each $cellor, $value in $btn-hover {
-    .btn_#{$cellor}:hover {
-        background-color: $value;
-    }
-}
-@each $cellor, $value in $colors {
-    .btn_border_#{$cellor} {
-        @include button-border-variant($value);
-    }
-}
-@each $cellor, $value in $btn-hover {
-    .btn_border_#{$cellor}:hover {
-        border-color: $value;
-        color: $value;
-        background-color: #{map-get($btn-hover-bg, $cellor)};
-    }
-}
-@each $color, $value in $colors {
-    .btn_outline_#{$color} {
-        @include button-outline-variant($value);
-    }
-}
-@each $color, $value in $btn-hover {
-    .btn_outline_#{$color}:hover {
-        border-color: $value;
-        color: $value;
-        background-color: #{map-get($btn-hover-bg,$color )};
-    }
-}
-
-.btn :active,
-.active {
-    color: blueviolet;
-    background-color: brown;
-}
 /* 
 Label 
 ===================
 */
 // veriable
-$lable_size_lg: 0.875rem;
-$lable_sixe_sm: 0.75rem;
+$lable-size-lg: 0.875rem;
+$lable-sixe-sm: 0.75rem;
 
 label {
     size: 1.25px;
@@ -1060,7 +1124,7 @@ label {
         height: 135px;
     }
 }
-.field_resting {
+.field-resting {
     border: 1px solid #e2e4e8;
     box-shadow: none;
     &:focus {
@@ -1068,11 +1132,11 @@ label {
         box-shadow: none;
     }
 }
-.field_active {
+.field-active {
     border: 1px solid $primary;
     box-shadow: 0px 2px 2px -1px rgba(0, 0, 0, 0.12), 0px 0px 0px 3px #dcd4ff;
 }
-.field_success {
+.field-success {
     border: 1px solid $success;
     box-shadow: 0px 2px 2px -1px rgba(0, 0, 0, 0.12), 0px 0px 0px 3px #bdf0e0;
     &:focus {
@@ -1080,7 +1144,7 @@ label {
         box-shadow: 0px 2px 2px -1px rgba(0, 0, 0, 0.12), 0px 0px 0px 3px #bdf0e0;
     }
 }
-.field_warning {
+.field-warning {
     border: 1px solid $warning;
     box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.12), 0px 0px 0px 3px #ffdfdf;
     &:focus {
