@@ -2,7 +2,7 @@
 /* veriables
  ============================= 
  */
-//   color
+//  color
 $primary-100: #f9f8ff;
 $primary-200: #ece8ff;
 $primary-300: #dcd5ff;
@@ -230,8 +230,7 @@ $purple-shadwos-z-index-9: 0px 40px 55px -11px rgba(112, 58, 202, 0.12);
 
 // font
 $font-size-base: 1rem;
-$font-size-small: $font-size-base * 0.875;
-$font-size-large: $font-size-base * 1.25;
+$font-size-duble-base: 2rem;
 
 $font-size-1: 10px;
 $font-size-2: 12px;
@@ -257,76 +256,166 @@ $font-size: (
     "10": $font-size-10,
 );
 
+// spacing
+$spacer: 0.25rem;
+$spacers: (
+    0: 0,
+    1: 0.25rem,
+    2: 0.5rem,
+    3: 0.75rem,
+    4: 1rem,
+    5: 1.125rem,
+    6: 1.25rem,
+    7: 1.5rem,
+    8: 1.75rem,
+    9: 2rem,
+    10: 2.5rem,
+    11: 2.625rem,
+    12: 3.5rem,
+    13: 4rem,
+    14: 4.5rem,
+);
+
+$border-widths: (
+    "0": 0,
+    "1": 1px,
+    "2": 2px,
+    "3": 3px,
+    "4": 4px,
+    "5": 5px,
+);
+$border: (
+    "border": border,
+    "border_top": border-top,
+    "border_bottom": border-bottom,
+    "border_left": border-left,
+    "border_right": border-right,
+);
+// veriable display width
+
+$grid-colums: 12;
+$grid-gap: (
+    "0": 0,
+    "1": 10px,
+    "2": 20px,
+    "3": 30px,
+);
+
+$breakpoints: (
+    "xs": 0,
+    "sm": 414px,
+    "md": 600px,
+    "lg": 1024px,
+    "xl": 1280px,
+    "xxl": 1440px,
+    "xxxl": 1920px,
+);
+
+
 /*
 veriables end
 =================
-background-color and test - color class
+
+// root
 */
-// Loop background color class
-@each $colore, $value in $colors {
-    .#{$colore} {
+
+:root {
+    //
+    @each $key, $value in $colors {
+        --#{$key}: #{$value};
+    }
+    @each $key, $value in $primary-colors {
+        --primary-#{$key}: #{$value};
+    }
+    @each $key, $value in $success-colors {
+        --primary-#{$key}: #{$value};
+    }
+    @each $key, $value in $info-colors {
+        --primary-#{$key}: #{$value};
+    }
+    @each $key, $value in $warning-colors {
+        --primary-#{$key}: #{$value};
+    }
+    @each $key, $value in $error-colors {
+        --primary-#{$key}: #{$value};
+    }
+    @each $key, $value in $light-grey-colors {
+        --primary-#{$key}: #{$value};
+    }
+    @each $key, $value in $dark-grey-colors {
+        --primary-#{$key}: #{$value};
+    }
+}
+
+/*
+background-color and test -color class
+*/
+// Loop backgroundcolor class
+@each $cellore, $value in $colors {
+    .#{$cellore} {
         background-color: $value;
     }
 }
-@each $key, $value in $primary-colors{
-    .primary_#{$key}{
+@each $key, $value in $primary-colors {
+    .primary_#{$key} {
         background-color: $value;
     }
-    .text_primary_#{$key}{
-        color: $value;
-    }
-}@each $key, $value in $success-colors{
-    .success_#{$key}{
-        background-color: $value;
-    }
-    .text_success_#{$key}{
+    .text_primary_#{$key} {
         color: $value;
     }
 }
-@each $key, $value in $info-colors{
-    .info_#{$key}{
+@each $key, $value in $success-colors {
+    .success_#{$key} {
         background-color: $value;
     }
-    .text_info_#{$key}{
+    .text_success_#{$key} {
         color: $value;
     }
 }
-@each $key, $value in $warning-colors{
-    .warning_#{$key}{
+@each $key, $value in $info-colors {
+    .info_#{$key} {
         background-color: $value;
     }
-    .text_warning_#{$key}{
+    .text_info_#{$key} {
         color: $value;
     }
 }
-@each $key, $value in $error-colors{
-    .text_error_#{$key}{
+@each $key, $value in $warning-colors {
+    .warning_#{$key} {
+        background-color: $value;
+    }
+    .text_warning_#{$key} {
         color: $value;
     }
-    .error_#{$key}{
+}
+@each $key, $value in $error-colors {
+    .text_error_#{$key} {
+        color: $value;
+    }
+    .error_#{$key} {
         background-color: $value;
     }
 }
-@each $key, $value in $dark-grey-colors{
-    .dark_grey_#{$key}{
+@each $key, $value in $dark-grey-colors {
+    .dark_grey_#{$key} {
         background-color: $value;
     }
-    .text_dark_grey_#{$key}{
+    .text_dark_grey_#{$key} {
         color: $value;
-     }
+    }
 }
-@each $key, $value in $light-grey-colors{
-    .light_grey_#{$key}{
+@each $key, $value in $light-grey-colors {
+    .light_grey_#{$key} {
         background-color: $value;
     }
-    .text_light_grey_#{$key}{
+    .text_light_grey_#{$key} {
         color: $value;
     }
 }
 
-// Loop color class
-@each $colore, $value in $colors {
-    .text_#{$colore} {
+// Loopcolor class
+@each $cellore, $value in $colors {
+    .text_#{$cellore} {
         color: $value;
     }
 }
@@ -336,6 +425,7 @@ background-color and test - color class
         font-size: $value;
         font-style: normal;
         font-weight: 400;
+        line-height: 160%;
     }
 }
 // Font Weights: Medium
@@ -344,6 +434,7 @@ background-color and test - color class
         font-size: $value;
         font-style: normal;
         font-weight: 500;
+        line-height: 160%;
     }
 }
 // Font Weights: Semibold
@@ -352,6 +443,7 @@ background-color and test - color class
         font-size: $value;
         font-style: normal;
         font-weight: 600;
+        line-height: 160%;
     }
 }
 @each $font, $value in $font-size {
@@ -359,6 +451,7 @@ background-color and test - color class
         font-size: $value;
         font-style: normal;
         font-weight: 700;
+        line-height: 160%;
     }
 }
 /* 
@@ -373,21 +466,16 @@ Body  and tags
 body {
     margin: 0;
     padding: 0;
-    width: 100%;
-    min-height: 100vh;
     font-family: "General Sans", sans-serif;
     font-size: 1rem;
     font-weight: 400;
-    line-height: 1.5;
-    color: #212529;
-    background-color: #fff;
-    -webkit-text-size-adjust: 100%;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    // line-height: 1.5;
+
 }
 hr {
     margin: 1rem 0;
     color: inherit;
-    background-color: currentColor;
+    background-color: currentcellor;
     border: 0;
     opacity: 0.25;
 }
@@ -395,6 +483,7 @@ hr {
 hr:not([size]) {
     height: 1px;
 }
+
 h6,
 .h6,
 h5,
@@ -417,128 +506,102 @@ h1,
 //     margin-bottom: 1rem;
 // }
 
-
-
 // utility
-$spacer: 4px;
-$spacers: (
-  0: 0,
-  1: 4px,
-  2: 8px,
-  3: 12px,
-  4: 16px,
-  5: 18px,
-  6: 20px,
-  7: 24px,
-  8: 28px,
-  9: 32px,
-  10: 40px,
-  11: 42px,
-  12: 56px,
-  13: 64px,
-  14: 72px
-);
 
-$border-widths: (
-  "0": 0,
-  "1": 1px,
-  "2": 2px,
-  "3": 3px,
-  "4": 4px,
-  "5": 5px
-);
-$border : (
-    "border" : border,
-    "border_top" : border-top,
-    "border_bottom" : border-bottom,
-    "border_left" : border-left,
-    "border_right": border-right
-
-);
 // margin
 @each $key, $value in $spacers {
-    .m_#{$key}{
-        margin:  $value
+    .m_#{$key} {
+        margin: $value;
     }
-    .mt_#{$key}{
-        margin-top: $value;
-    }
-    .mb_#{$key}{
-        margin-bottom: $value;
-    }
-    .mr_#{$key}{
+    .mx_#{$key} {
+        margin-left: $value;
         margin-right: $value;
     }
-    .ml_#{$key}{
+    .my_#{$key} {
+        margin-top: $value;
+        margin-bottom: $value;
+    }
+    .mt_#{$key} {
+        margin-top: $value;
+    }
+    .mb_#{$key} {
+        margin-bottom: $value;
+    }
+    .mr_#{$key} {
+        margin-right: $value;
+    }
+    .ml_#{$key} {
         margin-left: $value;
     }
-    
 }
 // padding
 @each $key, $value in $spacers {
-    .p_#{$key}{
+    .p_#{$key} {
         padding: $value;
     }
-    .pt_#{$key}{
-        padding-top: $value;
-    }
-    .pb_#{$key}{
-        padding-bottom: $value;
-    }
-    .pr_#{$key}{
+    .px_#{$key} {
+        padding-left: $value;
         padding-right: $value;
     }
-    .pl_#{$key}{
+    .py_#{$key} {
+        padding-top: $value;
+        padding-bottom: $value;
+    }
+    .pt_#{$key} {
+        padding-top: $value;
+    }
+    .pb_#{$key} {
+        padding-bottom: $value;
+    }
+    .pr_#{$key} {
+        padding-right: $value;
+    }
+    .pl_#{$key} {
         padding-left: $value;
     }
-    
 }
 // border
 
-@each $key, $value in  $border-widths{
-    .border_#{$key}{
+@each $key, $value in $border-widths {
+    .border_#{$key} {
         border: $value solid;
-       border-color: #999;
+        border-color: #999;
     }
-    
 }
 @each $key, $value in $border {
-    .#{$key}{
-        #{$value} : 1px solid #999;
+    .#{$key} {
+        #{$value}: 1px solid #999;
     }
-    
 }
 @each $key, $value in $colors {
-    .border_#{$key}{
-        border-color : $value;
+    .border_#{$key} {
+        border-color: $value;
     }
-    
 }
 
 .radius_6 {
-    border-radius: 6px;
+    border-radius: 0.375rem;
 }
 .radius_12 {
-    border-radius: 12px;
+    border-radius: 0.75rem;
 }
 .rounded {
-    border-radius: 24px;
+    border-radius: 1.5rem;
 }
 .radius_left_cap {
-    border-radius: 0px 24px 24px 0px;
+    border-radius: 0px 1.5rem 1.5rem 0px;
 }
 .radius_right_cap {
-    border-radius: 24px 0px 0px 24px;
+    border-radius: 1.5rem 0px 0px 1.5rem;
 }
 // width
 @for $val from 1 to 100 {
-    .width_#{$val}{
-        width: #{$val}#{"%"} ;
+    .width_#{$val} {
+        width: #{$val}#{"%"};
     }
-    
 }
-// 
-.height_20{
+//
+.height_20 {
     height: 50px;
 }
 
@@ -546,44 +609,73 @@ $border : (
 Layout 
 ===================
 */
-// veriable display width
-
-$grid-columns: 12;
-$grid-gap: (
-    "0" : 0,
-    "1" : 10px,
-    "2" : 20px,
-    "3" : 30px,
+$display: block, inline, flex, inline-block, grid, none;
+$float: (
+    "float_left": "left",
+    "float_right": "right",
+    "float_none": "none",
 );
-
-$breakpoints: (
-  "xs": 0,
-  "sm": 414px,
-  "md": 600px,
-  "lg": 1024px,
-  "xl": 1280px
+$flex: (
+    "flex_1": "1 1 0%",
+    "flex_auto": "1 1 auto",
+    "flex_initial": "0 1 auto",
+    "flex_none": "none",
 );
-$display : block, inline, flex, inline-block, grid, none;
-$layout-value-align-item : flex-start, flex-end, center;
-$flex-direction : (
-    "row" : row,
-    "row_reverse" : row-reverse,
-    "column_reverse": column-reverse,
-    "column" : column
+$layout-value-align-item: flex-start, flex-end, center;
+$flex-direction: (
+    "row": row,
+    "row_reverse": row-reverse,
+    "cellumn_reverse": cellumn-reverse,
+    "cellumn": cellumn,
 );
-$layout-value-justify-contend :( 
-    "flex_start" : flex-start,
-    "flex_end" : flex-end,
+$layout-value-justify-contend: (
+    "flex_start": flex-start,
+    "flex_end": flex-end,
     "center": center,
     "space_between": space-between,
-    "space_around" : space-around
+    "space_around": space-around,
 );
-
+// cell class
+@mixin xs {
+    @media (min-width: map-get($breakpoints, "xs")) {
+        @content;
+    }
+}
+@mixin sm {
+    @media (min-width: map-get($breakpoints, "sm")) {
+        @content;
+    }
+}
+@mixin md {
+    @media (min-width: map-get($breakpoints, "md")) {
+        @content;
+    }
+}
+@mixin lg {
+    @media (min-width: map-get($breakpoints, "lg")) {
+        @content;
+    }
+}
+@mixin xl {
+    @media (min-width: map-get($breakpoints, "xl")) {
+        @content;
+    }
+}
+@mixin xxl {
+    @media (min-width: map-get($breakpoints, "xxl")) {
+        @content;
+    }
+}
+@mixin xxxl {
+    @media (min-width: map-get($breakpoints, "xxxl")) {
+        @content;
+    }
+}
 
 .container {
     width: 90%;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 1rem;
 }
 
 .row {
@@ -594,108 +686,100 @@ $layout-value-justify-contend :(
 // display
 @each $var in $display {
     @if $var == inline-block {
-        .display_inline_block{
+        .display_inline_block {
             display: #{$var};
-        
         }
-    }@else{
-        .display_#{$var}{
+    } @else {
+        .display_#{$var} {
             display: #{$var};
-        
         }
     }
-    
 }
+// float
+@each $key, $var in $float {
+    .#{$key} {
+        float: $var;
+    }
+}
+// flex
+@each $key, $var in $flex {
+    .#{$key} {
+        flex: $var;
+    }
+}
+
+
 @each $key, $vale in $flex-direction {
-    .flex_dir_#{$key}{
+    .flex_dir_#{$key} {
         flex-direction: $vale;
     }
-    
 }
 
 // justify contend class
 @each $key, $var in $layout-value-justify-contend {
-    .justify_#{$key}{
+    .justify_#{$key} {
         justify-content: #{$var};
-  
     }
 }
 // alighitem
 
 @each $var in $layout-value-align-item {
-    .align_#{$var}{
+    .align_#{$var} {
         align-items: #{$var};
-    
-  
     }
 }
 @each $var in $layout-value-align-item {
-    .text_align_#{$var}{
+    .text_align_#{$var} {
         text-align: #{$var};
-    
-  
     }
 }
 
-// col class
-@mixin xs {
-    @media (min-width: map-get($breakpoints, "xs")){
-        @content;
-    }
-}
-@mixin sm {
-    @media (min-width: map-get($breakpoints, "sm")){
-        @content;
-    }
-}
-@mixin md {
-    @media (min-width: map-get($breakpoints, "md")){
-        @content;
-    }
-}
-@mixin lg {
-    @media (min-width: map-get($breakpoints, "lg")){
-        @content;
-    }
-}
-@mixin xl {
-    @media (min-width: map-get($breakpoints, "xl")){
-        @content;
-    }
-}
-
-@include xs{
-    @for $i from 1 through $grid-columns {
-        .col_#{$i}_xs{
+@include xs {
+    @for $i from 1 through $grid-colums {
+        .cell_#{$i}_xs {
             flex: 0 0 100% / 12 * $i;
         }
     }
 }
-@include sm{
-    @for $i from 1 through $grid-columns {
-        .col_#{$i}_sm{
-            flex: 0 0 100% /  $grid-columns * $i;
+@include sm {
+    @for $i from 1 through $grid-colums {
+        .cell_#{$i}_sm {
+            flex: 0 0 100% / $grid-colums * $i;
         }
     }
 }
-@include md{
-    @for $i from 1 through $grid-columns {
-        .col_#{$i}_md{
-            flex: 0 0 100% /  $grid-columns * $i;
+@include md {
+    @for $i from 1 through $grid-colums {
+        .cell_#{$i}_md {
+            flex: 0 0 100% / $grid-colums * $i;
         }
     }
 }
-@include lg{
-    @for $i from 1 through $grid-columns {
-        .col_#{$i}_lg{
-            flex: 0 0 100% /  $grid-columns * $i;
+@include lg {
+    @for $i from 1 through $grid-colums {
+        .cell_#{$i}_lg {
+            flex: 0 0 100% / $grid-colums * $i;
         }
     }
 }
-@include xl{
-    @for $i from 1 through $grid-columns {
-        .col_#{$i}_xl{
-            flex: 0 0 100% /  $grid-columns * $i;
+@include xl {
+    @for $i from 1 through $grid-colums {
+        .cell_#{$i}_xl {
+            flex: 0 0 100% / $grid-colums * $i;
+        }
+    }
+}
+@include xxl {
+    @for $i from 1 through $grid-colums {
+        .cell_#{$i}_xxl {
+            flex: 0 0 100% / $grid-colums * $i;
+        }
+    }
+}
+@include xxxl {
+    @for $i from 1 through $grid-colums {
+        .cell_#{$i}_xxxl {
+            flex: 0 0 100% / $grid-colums * $i;
         }
     }
 }
@@ -703,8 +787,6 @@ $layout-value-justify-contend :(
 @each $key, $value in $grid-gap {
     .gap_#{$key} > * {
         padding: $value;
-        
-
     }
     .gap_#{$key} {
         margin-left: -$value;
@@ -718,76 +800,128 @@ $layout-value-justify-contend :(
 //     @media (max-width: $grid-tablet-600) {
 //         display: grid;
 //         grid-gap: 16px;
-//         grid-template-columns: repeat(1, 1fr);
+//         grid-template-colums: repeat(1, 1fr);
 //     }
 //     @media (min-width: $grid-tablet-600) {
 //         display: grid;
 //         grid-gap: 16px;
-//         grid-template-columns: repeat(2, 1fr);
+//         grid-template-colums: repeat(2, 1fr);
 //     }
 //     @media (min-width: $grid-tablet-720) {
 //         display: grid;
 //         grid-gap: 16px;
-//         grid-template-columns: repeat(3, 1fr);
+//         grid-template-colums: repeat(3, 1fr);
 //     }
 //     @media (min-width: $grid-tablet-1024) {
 //         display: grid;
 //         grid-gap: 16px;
-//         grid-template-columns: repeat(4, 1fr);
+//         grid-template-colums: repeat(4, 1fr);
 //     }
 //     @media (min-width: $grid-desktop-1280) {
 //         display: grid;
 //         grid-gap: 16px;
-//         grid-template-columns: repeat(5, 1fr);
+//         grid-template-colums: repeat(5, 1fr);
 //     }
 //     @media (min-width: $grid-desktop-1920) {
 //         display: grid;
 //         grid-gap: 16px;
-//         grid-template-columns: repeat(6, 1fr);
+//         grid-template-colums: repeat(6, 1fr);
 //     }
 // }
 /* 
 Link
 ===================
 */
-.link{
+.link {
     text-decoration: none;
     color: $info;
-  
+    &:hover {
+        color: $info-300;
+    }
 }
 .link_underline {
-    text-decoration: underline; 
+    text-decoration: underline;
     color: $info;
+    &:hover {
+        color: $info-300;
+    }
 }
 @each $key, $value in $colors {
-    .link_#{$key}{
+    .link_#{$key} {
         color: $value;
         text-decoration: none;
-        &:hover{
-            color:#{map-get($link-hover-bg,$key )};
+        &:hover {
+            color: #{map-get($link-hover-bg, $key)};
         }
     }
-    
 }
-
 
 /* 
 Button 
 ===================
 */
+$btn-lg-font: 16px;
+$btn-md-font: 14px;
+$btn-sm-font: 12px;
+// @mixin btn_size {
+//     @media (min-width: map-get($breakpoints, "md")) {
+//         @content;
+//     }
+// }
+
+@include xs {
+    .btn {
+        font-size: $btn-sm-font;
+    }
+}
+@include md {
+    .btn {
+        font-size: $btn-md-font;
+    }
+}
+@include lg {
+    .btn {
+        font-size: $btn-lg-font;
+    }
+}
+
+button {
+    &:disabled,
+    [disabled] {
+        background-color: rgb(229, 229, 229);
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+}
 .btn {
-    display: flex;
-    justify-content: center;
+    display: inline-block;
+    cursor: pointer;
     align-items: center;
+    // width: 23.438rem;
+    // height: 3rem;
     text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
     font-weight: 600;
-    font-size: 16px;
-    padding: 10px 16px;
+    padding: 0.625rem 1rem;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.08);
     border: 0;
-    outline: none;
+    border: none;
+    &:disabled,
+    [disabled],
+    &.disabled,
+    fieldset:disabled & {
+        background-color: $light-grey-400;
+        color: $light-grey-600;
+        border: 0;
+        pointer-events: none;
+        // opacity: ;
+    }
 
+    &:focus {
+    }
 }
+
 @mixin button-variant($background) {
     @if $background == $light-grey {
         color: black;
@@ -795,21 +929,36 @@ Button
         color: white;
     }
     background-color: $background;
-
+}
+@mixin button-border-variant($cellor) {
+    color: $cellor;
+    border: 1px solid $cellor;
 }
 @mixin button-outline-variant($color) {
     color: $color;
     border: 1px solid $color;
 }
 
-@each $color, $value in $colors {
-    .btn_#{$color} {
+@each $cellor, $value in $colors {
+    .btn_#{$cellor} {
         @include button-variant($value);
     }
 }
-@each $color, $value in $btn-hover {
-    .btn_#{$color}:hover {
+@each $cellor, $value in $btn-hover {
+    .btn_#{$cellor}:hover {
         background-color: $value;
+    }
+}
+@each $cellor, $value in $colors {
+    .btn_border_#{$cellor} {
+        @include button-border-variant($value);
+    }
+}
+@each $cellor, $value in $btn-hover {
+    .btn_border_#{$cellor}:hover {
+        border-color: $value;
+        color: $value;
+        background-color: #{map-get($btn-hover-bg, $cellor)};
     }
 }
 @each $color, $value in $colors {
@@ -825,3 +974,117 @@ Button
     }
 }
 
+.btn :active,
+.active {
+    color: blueviolet;
+    background-color: brown;
+}
+/* 
+Label 
+===================
+*/
+// veriable
+$lable_size_lg: 0.875rem;
+$lable_sixe_sm: 0.75rem;
+
+label {
+    size: 1.25px;
+    line-height: 2rem;
+    font-weight: 600;
+}
+
+// input,
+// button,
+// select,
+// optgroup,
+// textarea {
+//     // margin: 0;
+
+//     line-height: inherit;
+// }
+input,
+textarea {
+    margin: 0.5rem;
+    border: 1px solid #e2e4e8;
+    border-radius: 0.375rem;
+    font-weight: 600;
+    font-family: inherit;
+    line-height: 160%;
+    width: 375px;
+    outline: none;
+    resize: auto;
+    // align-self: stretch;
+    &:focus {
+        border: 1px solid $primary;
+        box-shadow: 0px 2px 2px -1px rgba(0, 0, 0, 0.12), 0px 0px 0px 3px #dcd4ff;
+        color: #0f1d40;
+    }
+    &:disabled,
+    &.disabled {
+        background-color: $light-grey-400;
+        color: $light-grey-600;
+        border: 0;
+        pointer-events: none;
+    }
+}
+@include xs {
+    input {
+        height: 32px;
+        font-size: 12px;
+        padding: 0 0.5rem;
+    }
+    textarea {
+        height: 96px;
+        padding: 0 0.5rem;
+    }
+}
+@include md {
+    input {
+        height: 40px;
+        font-size: 14px;
+        padding: 0 0.75rem;
+    }
+    textarea {
+        height: 96px;
+        padding: 0 0.75rem;
+    }
+}
+@include xl {
+    input {
+        height: 48px;
+        font-size: 16px;
+        padding: 0 0.875rem;
+    }
+    textarea {
+        padding: 0 0.875rem;
+        height: 135px;
+    }
+}
+.field_resting {
+    border: 1px solid #e2e4e8;
+    box-shadow: none;
+    &:focus {
+        border: 1px solid #e2e4e8;
+        box-shadow: none;
+    }
+}
+.field_active {
+    border: 1px solid $primary;
+    box-shadow: 0px 2px 2px -1px rgba(0, 0, 0, 0.12), 0px 0px 0px 3px #dcd4ff;
+}
+.field_success {
+    border: 1px solid $success;
+    box-shadow: 0px 2px 2px -1px rgba(0, 0, 0, 0.12), 0px 0px 0px 3px #bdf0e0;
+    &:focus {
+        border: 1px solid $success;
+        box-shadow: 0px 2px 2px -1px rgba(0, 0, 0, 0.12), 0px 0px 0px 3px #bdf0e0;
+    }
+}
+.field_warning {
+    border: 1px solid $warning;
+    box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.12), 0px 0px 0px 3px #ffdfdf;
+    &:focus {
+        border: 1px solid $warning;
+        box-shadow: 0px 2px 2px -1px rgba(0, 0, 0, 0.12), 0px 0px 0px 3px #ffdfdf;
+    }
+}
