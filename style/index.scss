@@ -959,15 +959,18 @@ Label
 .label {
     line-height: 160%;
     color: #525c76;
+    font-weight: 600;
 }
 .label-sm{
     size: 12px;
     line-height: 160%;
+    font-weight: 600;
     color: #525c76;
 }
 .label-lg{
     size: 14px;
     line-height: 160%;
+    font-weight: 600;
     color: #525c76;
 
 }
@@ -976,17 +979,20 @@ Label
         font-size: 10px;
         display: block;
         line-height: 16px;
+        font-weight: 600;
         color: $light-grey-600;
     }
 }
 .hint-success{
     display: flex;
+    font-weight: 600;
     color: #00794E;
     gap: 10px;
 
 }
 .hint-error {
     display: flex;
+    font-weight: 600;
     color: #ff3236;
     gap: 10px;
     svg {
@@ -995,6 +1001,7 @@ Label
 }
 .hint-warning{
     display: flex;
+    font-weight: 600;
     color: #525C76;
     gap: 10px;
     
@@ -1028,6 +1035,7 @@ Label
 @include md() {
     .label {
         size: 14px;
+        
     }
     .input,
     .select {

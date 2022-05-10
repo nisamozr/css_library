@@ -1977,17 +1977,20 @@ Label
 .label {
   line-height: 160%;
   color: #525c76;
+  font-weight: 600;
 }
 
 .label-sm {
   size: 12px;
   line-height: 160%;
+  font-weight: 600;
   color: #525c76;
 }
 
 .label-lg {
   size: 14px;
   line-height: 160%;
+  font-weight: 600;
   color: #525c76;
 }
 
@@ -1995,6 +1998,7 @@ Label
   font-size: 10px;
   display: block;
   line-height: 16px;
+  font-weight: 600;
   color: #b2b7c2;
 }
 
@@ -2002,6 +2006,7 @@ Label
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  font-weight: 600;
   color: #00794E;
   gap: 10px;
 }
@@ -2010,6 +2015,7 @@ Label
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  font-weight: 600;
   color: #ff3236;
   gap: 10px;
 }
@@ -2022,6 +2028,7 @@ Label
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  font-weight: 600;
   color: #525C76;
   gap: 10px;
 }
