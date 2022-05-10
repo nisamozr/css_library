@@ -274,6 +274,12 @@ $spacers: (
     12: 3.5rem,
     13: 4rem,
     14: 4.5rem,
+    15: 5rem,
+    16: 6rem,
+    17: 7rem,
+    18: 8rem,
+    19: 9rem,
+    20: 10rem,
 );
 
 $border-widths: (
@@ -468,7 +474,7 @@ body {
     padding: 0;
     font-family: "General Sans", sans-serif;
     font-size: 1rem;
-    font-weight: 400;
+    // font-weight: 600;
     // line-height: 1.5;
 }
 hr {
@@ -504,105 +510,6 @@ h1,
 //     margin-top: 0;
 //     margin-bottom: 1rem;
 // }
-
-// utility
-
-// margin
-@each $key, $value in $spacers {
-    .m-#{$key} {
-        margin: $value;
-    }
-    .mx-#{$key} {
-        margin-left: $value;
-        margin-right: $value;
-    }
-    .my-#{$key} {
-        margin-top: $value;
-        margin-bottom: $value;
-    }
-    .mt-#{$key} {
-        margin-top: $value;
-    }
-    .mb-#{$key} {
-        margin-bottom: $value;
-    }
-    .mr-#{$key} {
-        margin-right: $value;
-    }
-    .ml-#{$key} {
-        margin-left: $value;
-    }
-}
-// padding
-@each $key, $value in $spacers {
-    .p-#{$key} {
-        padding: $value;
-    }
-    .px-#{$key} {
-        padding-left: $value;
-        padding-right: $value;
-    }
-    .py-#{$key} {
-        padding-top: $value;
-        padding-bottom: $value;
-    }
-    .pt-#{$key} {
-        padding-top: $value;
-    }
-    .pb-#{$key} {
-        padding-bottom: $value;
-    }
-    .pr-#{$key} {
-        padding-right: $value;
-    }
-    .pl-#{$key} {
-        padding-left: $value;
-    }
-}
-// border
-
-@each $key, $value in $border-widths {
-    .border-#{$key} {
-        border: $value solid;
-        border-color: #999;
-    }
-}
-@each $key, $value in $border {
-    .#{$key} {
-        #{$value}: 1px solid #999;
-    }
-}
-@each $key, $value in $colors {
-    .border-#{$key} {
-        border-color: $value;
-    }
-}
-
-.radius-6 {
-    border-radius: 0.375rem;
-}
-.radius-12 {
-    border-radius: 0.75rem;
-}
-.rounded {
-    border-radius: 1.5rem;
-}
-.radius-left-cap {
-    border-radius: 0px 1.5rem 1.5rem 0px;
-}
-.radius-right-cap {
-    border-radius: 1.5rem 0px 0px 1.5rem;
-}
-// width
-@for $val from 1 to 100 {
-    .width-#{$val} {
-        width: #{$val}#{"%"};
-    }
-}
-//
-.height-20 {
-    height: 50px;
-}
 
 /* 
 Layout 
@@ -1046,88 +953,174 @@ $btn-sm-font: 12px;
 /* 
 Label 
 ===================
+
+
 */
+.label {
+    line-height: 160%;
+    color: #525c76;
+}
+.label-sm{
+    size: 12px;
+    line-height: 160%;
+    color: #525c76;
+}
+.label-lg{
+    size: 14px;
+    line-height: 160%;
+    color: #525c76;
+
+}
+.label-balance {
+    span {
+        font-size: 10px;
+        display: block;
+        line-height: 16px;
+        color: $light-grey-600;
+    }
+}
+.hint-success{
+    display: flex;
+    color: #00794E;
+    gap: 10px;
+
+}
+.hint-error {
+    display: flex;
+    color: #ff3236;
+    gap: 10px;
+    svg {
+        fill: #ff3236;
+    }
+}
+.hint-warning{
+    display: flex;
+    color: #525C76;
+    gap: 10px;
+    
+
+}
+@include xs() {
+    .label {
+        size: 12px;
+    }
+    .input,
+    .select {
+        font-size: 12px;
+        padding: 11px 12px;
+        height: 32px;
+
+    }
+  
+    svg {
+        width: 16px;
+        height: 16px;
+    }
+    .hint-success,.hint-warning, .hint-error {
+        font-size: 10px;
+        svg{
+            width: 12px;
+            height: 13px;
+        }
+
+    }
+}
+@include md() {
+    .label {
+        size: 14px;
+    }
+    .input,
+    .select {
+        font-size: 14px;
+        padding: 11px 12px;
+        height: 40px;
+    }
+   
+    svg {
+        width: 18px;
+        height: 18px;
+    }
+    .hint-success, .hint-warning, .hint-error {
+        font-size: 12px;
+        svg{
+            width: 16px;
+            height: 16px;
+        }
+
+    }
+}
+@include xl() {
+    .input,
+    .select {
+        font-size: 16px;
+        padding: 11px 12px;
+        height: 48px;
+    }
+ 
+    svg {
+        width: 20px;
+        height: 20px;
+    }
+    .usd-icon {
+        width: 30px;
+        height: 20px;
+    }
+    
+}
+
 // veriable
 $lable-size-lg: 0.875rem;
 $lable-sixe-sm: 0.75rem;
 
-label {
-    size: 1.25px;
-    line-height: 2rem;
-    font-weight: 600;
-}
-
 .input,
-.textarea {
-    margin: 0.5rem;
+.select {
     border: 1px solid #e2e4e8;
-    border-radius: 0.375rem;
+    border-radius: 6px;
     font-weight: 600;
-    font-family: inherit;
-    line-height: 160%;
-    width: 375px;
     outline: none;
-    resize: auto;
-    // align-self: stretch;
-    &:focus {
+    margin-bottom: 8px;
+    line-height: 160%;
+
+    &:active {
         border: 1px solid $primary;
-        box-shadow: 0px 2px 2px -1px rgba(0, 0, 0, 0.12), 0px 0px 0px 3px #dcd4ff;
-        color: #0f1d40;
+                 box-shadow: 0px 2px 2px -1px rgba(0, 0, 0, 0.12), 0px 0px 0px 3px #dcd4ff;
+                color: #0f1d40;
     }
     &:disabled,
-    &.disabled {
-        background-color: $light-grey-400;
-        color: $light-grey-600;
-        border: 0;
-        pointer-events: none;
+      &:disabled + label {
+        border: 1px solid #E2E4E8;
+          background-color: $light-grey-400;
+        
+            color: $light-grey-600;
+            pointer-events: none;
+         }
+
+}
+.input {
+    position: static;
+    padding: 11px 12px;
+    outline: none;
+    &::placeholder {
+        color: #b2b7c2;
+    }
+    svg {
     }
 }
-@include xs {
-    input {
-        height: 32px;
-        font-size: 12px;
-        padding: 0 0.5rem;
-    }
-    textarea {
-        height: 96px;
-        padding: 0 0.5rem;
+.input-fit{
+    width: 375px;
+}
+.input-paragraph {
+    @extend .input;
+    position: static;
+    width: 375px;
+    height: 121px;
+    resize: none;
+    &::placeholder {
+        color: #b2b7c2;
     }
 }
-@include md {
-    input {
-        height: 40px;
-        font-size: 14px;
-        padding: 0 0.75rem;
-    }
-    textarea {
-        height: 96px;
-        padding: 0 0.75rem;
-    }
-}
-@include xl {
-    input {
-        height: 48px;
-        font-size: 16px;
-        padding: 0 0.875rem;
-    }
-    textarea {
-        padding: 0 0.875rem;
-        height: 135px;
-    }
-}
-.field-resting {
-    border: 1px solid #e2e4e8;
-    box-shadow: none;
-    &:focus {
-        border: 1px solid #e2e4e8;
-        box-shadow: none;
-    }
-}
-.field-active {
-    border: 1px solid $primary;
-    box-shadow: 0px 2px 2px -1px rgba(0, 0, 0, 0.12), 0px 0px 0px 3px #dcd4ff;
-}
-.field-success {
+
+.input-success{
     border: 1px solid $success;
     box-shadow: 0px 2px 2px -1px rgba(0, 0, 0, 0.12), 0px 0px 0px 3px #bdf0e0;
     &:focus {
@@ -1135,11 +1128,323 @@ label {
         box-shadow: 0px 2px 2px -1px rgba(0, 0, 0, 0.12), 0px 0px 0px 3px #bdf0e0;
     }
 }
-.field-warning {
+.input-warning {
     border: 1px solid $warning;
     box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.12), 0px 0px 0px 3px #ffdfdf;
     &:focus {
         border: 1px solid $warning;
         box-shadow: 0px 2px 2px -1px rgba(0, 0, 0, 0.12), 0px 0px 0px 3px #ffdfdf;
     }
+}
+.select {
+    padding: 0 12px;
+    background-color: #fff;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url("../asset/input/down.svg") white no-repeat 98.5% !important;
+    background: url("../asset/input/down.svg") white no-repeat calc(100% - 10px) !important;
+    padding-right: 3rem;
+    color: $light-grey-600;
+
+    option {
+        border: 1px solid #e2e4e8;
+        font-weight: inherit;
+    }
+}
+.select-inside {
+    font-weight: 600;
+
+    border: none;
+    background-color: #fff;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url("../asset/input/down.svg") white no-repeat 98.5% !important;
+    background: url("../asset/input/down.svg") white no-repeat calc(100% - 10px) !important;
+    padding-right: 2.5rem;
+    color: $light-grey-600;
+    outline: none;
+
+    option {
+        font-weight: inherit;
+    }
+}
+
+.down-arrow {
+    position: absolute;
+    right: 11px;
+    top: 12px;
+}
+
+// .input-auto {
+//     /* Inside auto layout */
+
+//     flex: none;
+//     order: 0;
+//     align-self: stretch;
+//     flex-grow: 1;
+//     margin: 4px 0px;
+// }
+.input-box {
+    position: relative;
+    width: fit-content;
+}
+.icon-buttom {
+    position: absolute;
+    bottom: 13.5px;
+    right: 13.5px;
+}
+
+.icon-left {
+    position: absolute;
+    top: 13.5px;
+    left: 13.5px;
+}
+
+.icon-right {
+    position: absolute;
+    top: 13.5px;
+    right: 13.5px;
+    & > * {
+        cursor: pointer;
+    }
+}
+.close-icon {
+    position: absolute;
+    top: 13.5px;
+    right: 11%;
+    cursor: pointer;
+}
+.usd-icon {
+}
+.switch {
+    position: absolute;
+
+    right: 13.5px;
+    top: 13.5px;
+
+    display: inline-block;
+    width: 36px;
+    height: 20px;
+    input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+        &:checked + .slider {
+            background-color: #2196f3;
+        }
+
+        &:focus + .slider {
+            box-shadow: 0 0 1px #2196f3;
+        }
+    }
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+        &::before {
+            position: absolute;
+            content: "";
+            height: 14px;
+            width: 14px;
+            top: 3px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            -webkit-transition: 0.4s;
+            transition: 0.4s;
+        }
+    }
+
+    input:checked + .slider:before {
+        -webkit-transform: translateX(16px);
+        -ms-transform: translateX(16px);
+        transform: translateX(16px);
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+        border-radius: 34px;
+        &::before {
+            border-radius: 50%;
+        }
+    }
+}
+
+// .input,
+// .textarea {
+//     margin: 0.5rem;
+//     border: 1px solid #e2e4e8;
+//     border-radius: 0.375rem;
+//     font-weight: 600;
+//     font-family: inherit;
+//     line-height: 160%;
+//     width: 375px;
+//     outline: none;
+//     resize: auto;
+//     // align-self: stretch;
+//     &:focus {
+//         border: 1px solid $primary;
+//         box-shadow: 0px 2px 2px -1px rgba(0, 0, 0, 0.12), 0px 0px 0px 3px #dcd4ff;
+//         color: #0f1d40;
+//     }
+//     &:disabled,
+//     &.disabled {
+//         background-color: $light-grey-400;
+//         color: $light-grey-600;
+//         border: 0;
+//         pointer-events: none;
+//     }
+// }
+// @include xs {
+//     input {
+//         height: 32px;
+//         font-size: 12px;
+//         padding: 0 0.5rem;
+//     }
+//     textarea {
+//         height: 96px;
+//         padding: 0 0.5rem;
+//     }
+// }
+// @include md {
+//     input {
+//         height: 40px;
+//         font-size: 14px;
+//         padding: 0 0.75rem;
+//     }
+//     textarea {
+//         height: 96px;
+//         padding: 0 0.75rem;
+//     }
+// }
+// @include xl {
+//     input {
+//         height: 48px;
+//         font-size: 16px;
+//         padding: 0 0.875rem;
+//     }
+//     textarea {
+//         padding: 0 0.875rem;
+//         height: 135px;
+//     }
+// }
+// .field-resting {
+//     border: 1px solid #e2e4e8;
+//     box-shadow: none;
+//     &:focus {
+//         border: 1px solid #e2e4e8;
+//         box-shadow: none;
+//     }
+// }
+// .field-active {
+//     border: 1px solid $primary;
+//     box-shadow: 0px 2px 2px -1px rgba(0, 0, 0, 0.12), 0px 0px 0px 3px #dcd4ff;
+// }
+
+
+// utility
+
+// margin
+@each $key, $value in $spacers {
+    .m-#{$key} {
+        margin: $value;
+    }
+    .mx-#{$key} {
+        margin-left: $value;
+        margin-right: $value;
+    }
+    .my-#{$key} {
+        margin-top: $value;
+        margin-bottom: $value;
+    }
+    .mt-#{$key} {
+        margin-top: $value;
+    }
+    .mb-#{$key} {
+        margin-bottom: $value;
+    }
+    .mr-#{$key} {
+        margin-right: $value;
+    }
+    .ml-#{$key} {
+        margin-left: $value;
+    }
+}
+// padding
+@each $key, $value in $spacers {
+    .p-#{$key} {
+        padding: $value;
+    }
+    .px-#{$key} {
+        padding-left: $value;
+        padding-right: $value;
+    }
+    .py-#{$key} {
+        padding-top: $value;
+        padding-bottom: $value;
+    }
+    .pt-#{$key} {
+        padding-top: $value;
+    }
+    .pb-#{$key} {
+        padding-bottom: $value;
+    }
+    .pr-#{$key} {
+        padding-right: $value;
+    }
+    .pl-#{$key} {
+        padding-left: $value;
+    }
+}
+// border
+
+@each $key, $value in $border-widths {
+    .border-#{$key} {
+        border: $value solid;
+        border-color: #999;
+    }
+}
+@each $key, $value in $border {
+    .#{$key} {
+        #{$value}: 1px solid #999;
+    }
+}
+@each $key, $value in $colors {
+    .border-#{$key} {
+        border-color: $value;
+    }
+}
+
+.radius-6 {
+    border-radius: 0.375rem;
+}
+.radius-12 {
+    border-radius: 0.75rem;
+}
+.rounded {
+    border-radius: 1.5rem;
+}
+.radius-left-cap {
+    border-radius: 0px 1.5rem 1.5rem 0px;
+}
+.radius-right-cap {
+    border-radius: 1.5rem 0px 0px 1.5rem;
+}
+// width
+@for $val from 1 to 100 {
+    .width-#{$val} {
+        width: #{$val}#{"%"};
+    }
+}
+//
+.height-20 {
+    height: 50px;
 }
